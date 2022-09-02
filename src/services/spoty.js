@@ -1,19 +1,8 @@
-import {URI,PETICION} from "../helpers/datospeticionGET.js"
+import { URI,PETICION} from "../helpers/datospeticionGET.js";
+import { paintSongs } from "../controllers/controladorpintarcanciones.js";
+import { querieSongs} from "./servicioconsultarcanciones.js";
 
-//CONSUMO API
-fetch(URI,PETICION)
-.then(function(respuesta){
-    return respuesta.json()
-})
-.then(function(respuesta){
-
-    let container = document.getElementById("container")
-    let row = document.getElementById("row");
-
-    
-
-
-})
-.catch(function(respuestaError){
-    console.log( respuestaError)
-})
+// Consumir un API
+let songs = await querieSongs(URI,PETICION);
+console.log(songs);
+paintSongs(songs);

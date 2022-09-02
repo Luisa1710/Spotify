@@ -1,7 +1,12 @@
-function pintarCanciones (songs){
-    respuesta.tracks.forEach(function(song) {
+export function paintSongs (songs){
+    
+    let row = document.getElementById("row")
 
-        
+        row.innerHTML= ""
+    
+    songs.tracks.forEach(function(song) {
+
+            
         console.log( song.preview_url)
         console.log( song.popularity)
         console.log( song.album.images[0].url)
